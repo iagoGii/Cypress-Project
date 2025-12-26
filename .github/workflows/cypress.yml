@@ -1,13 +1,12 @@
-# Nome da pipeline
-name: Cypress Tests
+name: Pipeline de Testes Automatizados
 
-# Em que momento será executada
-on: [push]
+on:
+  push:
+    branches: [ '*' ]
+  schedule:
+    - cron: '0 12 * * 1,3,5'
 
 jobs:
-    # o que vai ser feito nessa pipeline
-    # só teremos um job: rodar os testes
-
   cypress-run:
     runs-on: ubuntu-latest
 
